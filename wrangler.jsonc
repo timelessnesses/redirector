@@ -9,7 +9,10 @@
 	"compatibility_date": "2025-04-24",
 	"observability": {
 		"enabled": true
-	}
+	},
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -22,6 +25,19 @@
 	 * databases, object storage, AI inference, real-time communication and more.
 	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
 	 */
+	"d1_databases": [
+		{
+			"binding": "redirector_db",
+			"database_name": "redirector",
+			"database_id": "c689f030-8917-47a9-9971-a269d5ac1389"
+		}
+	],
+
+	"triggers": {
+		"crons": [
+			"*/5 * * * *"
+		]
+	},
 
 	/**
 	 * Environment Variables
@@ -37,7 +53,10 @@
 	 * Static Assets
 	 * https://developers.cloudflare.com/workers/static-assets/binding/
 	 */
-	// "assets": { "directory": "./public/", "binding": "ASSETS" },
+
+	"assets": {
+		"directory": "public"
+	}
 
 	/**
 	 * Service Bindings (communicate between multiple Workers)

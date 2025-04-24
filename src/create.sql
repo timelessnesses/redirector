@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS redirector (
+	id TEXT PRIMARY KEY NOT NULL,
+	redirect_url TEXT NOT NULL,
+	created_at INTEGER NOT NULL,
+	expires INTEGER NOT NULL
+);
