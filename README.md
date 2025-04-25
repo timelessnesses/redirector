@@ -13,7 +13,7 @@ pnpx wrangler d1 execute redirector --file .\src\create.sql --remote
 ## Add
 
 ```bash
-curl -X POST https://{your-domain}/add?url=https://example.com&expires=30
+curl -X GET https://{your-domain}/add?url=https://example.com&expires=30
 ```
 
 expires is optional arg where you provided "age" in seconds (default 3 days)
